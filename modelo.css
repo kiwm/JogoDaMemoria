@@ -23,6 +23,10 @@ section {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.322);
 }
 
+div {
+    text-align: center;
+}
+
 footer {
     font: normal 20px Arial;
     color: white;
