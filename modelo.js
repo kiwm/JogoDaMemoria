@@ -2,9 +2,11 @@ var imagens = ["gato.png", "macaco.png", "porco.png", "ovelha.png", "rinoceronte
 function prepararJogo() {
     shuffleArray(imagens)
     for(var i = 0; i < imagens.length; ++i) {
-        var x = document.getElementById(`img${i}`)
-        x.src = imagens[i]
+        var img = document.getElementById(`img${i}`)
+        img.src = imagens[i]
     }
+
+    iniciarJogo()
 }
 
 function shuffleArray(array) {
@@ -14,4 +16,16 @@ function shuffleArray(array) {
         array[i] = array[j];
         array[j] = temp;
     }
+}
+
+function iniciarJogo() {
+    for(var i = 0; i < imagens.length; ++i) {
+        var img = document.getElementById(`img${i}`)
+        img.src = "fundo.png"
+    }
+}
+
+function clicar(x) {
+    var img = document.getElementById(`img${x}`)
+    img.src = imagens[x]
 }
