@@ -32,8 +32,10 @@ function iniciarJogo() {
 }
 
 function clicar(x) {
+
     var img = document.getElementById(`img${x}`)
-  
+    img.onmouseover =""
+    img.onmouseout = ""
     img.src = imagens[x]
     comparar(x)
 }
@@ -42,6 +44,12 @@ function selecionar(x) {
     var img = document.getElementById(`img${x}`)
   
     img.src = "fundoEscuro.png"
+}
+
+function disSelecionar(x) {
+    var img = document.getElementById(`img${x}`)
+  
+    img.src = "fundo.png"
 }
 
 function finalizarJogo() {
@@ -73,6 +81,8 @@ function comparar(x) {
                 img2.onclick =""
                 img1.onmouseover =""
                 img2.onmouseover = ""  
+                img1.onmouseout = ""
+                img2.onmouseout = ""
                 img1.src = "branco.png"
                 img2.src = "branco.png"
                 primeiro = null
