@@ -20,37 +20,25 @@ function shuffleArray(array) {
     }
 }
 
-function iniciarJogo() {
 
-    setTimeout(cobrir, 800);
+function iniciarJogo() {
+    
+    document.getElementById("div1").style.display = 'block';
+    setTimeout(cobrir, 1000);
     function cobrir() {
         for(var i = 0; i < imagens.length; ++i) {
             var img = document.getElementById(`img${i}`)
             img.src = "fundo.png"
         }
       }
+      document.getElementById("btn1").style.display = 'none';
 }
 
-function clicar(x) {
-
-    var img = document.getElementById(`img${x}`)
-    img.onmouseover =""
-    img.onmouseout = ""
-    img.src = imagens[x]
+function clicar(x, index) {
+    x.src = imagens[index]
     comparar(x)
 }
 
-function selecionar(x) {
-    var img = document.getElementById(`img${x}`)
-  
-    img.src = "fundoEscuro.png"
-}
-
-function disSelecionar(x) {
-    var img = document.getElementById(`img${x}`)
-  
-    img.src = "fundo.png"
-}
 
 function finalizarJogo() {
     if(contador > 5) {
@@ -70,21 +58,14 @@ function comparar(x) {
     }
 
     if(primeiro != null && segundo != null) {
-        
-        var img1 = document.getElementById(`img${primeiro}`)
-        var img2 = document.getElementById(`img${segundo}`)
 
-        if(img1.src == img2.src) {
+        if(primeiro.src == segundo.src) {
             setTimeout(mostarImagemCerta, 200)
             function mostarImagemCerta() {
-                img1.onclick =""   
-                img2.onclick =""
-                img1.onmouseover =""
-                img2.onmouseover = ""  
-                img1.onmouseout = ""
-                img2.onmouseout = ""
-                img1.src = "branco.png"
-                img2.src = "branco.png"
+                primeiro.onclick =""   
+                segundo.onclick =""
+                primeiro.src = "branco.png"
+                segundo.src = "branco.png"
                 primeiro = null
                 segundo = null
                 ++contador
@@ -93,8 +74,8 @@ function comparar(x) {
         } else {
             setTimeout(mostarImagemErrada, 400)
             function mostarImagemErrada() {
-                img1.src = "fundo.png"
-                img2.src = "fundo.png"
+                primeiro.src = "fundo.png"
+                segundo.src = "fundo.png"
                 primeiro = null
                 segundo = null
               }
