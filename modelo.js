@@ -38,6 +38,12 @@ function clicar(x) {
     comparar(x)
 }
 
+function selecionar(x) {
+    var img = document.getElementById(`img${x}`)
+  
+    img.src = "fundoEscuro.png"
+}
+
 function finalizarJogo() {
     if(contador > 5) {
         if(confirm("Parabéns, deseja jogar novamente?")) {
@@ -64,7 +70,9 @@ function comparar(x) {
             setTimeout(mostarImagemCerta, 200)
             function mostarImagemCerta() {
                 img1.onclick =""   
-                img2.onclick =""  
+                img2.onclick =""
+                img1.onmouseover =""
+                img2.onmouseover = ""  
                 img1.src = "branco.png"
                 img2.src = "branco.png"
                 primeiro = null
