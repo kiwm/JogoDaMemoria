@@ -59,7 +59,7 @@ function comparar(x) {
 
     if(primeiro != null && segundo != null) {
 
-        if(primeiro.src == segundo.src) {
+        if(primeiro.src == segundo.src && primeiro != segundo) {
             setTimeout(mostarImagemCerta, 200)
             function mostarImagemCerta() {
                 primeiro.onclick =""   
