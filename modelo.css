@@ -32,6 +32,15 @@ div#div1 {
     display: none;
 }
 
+div#div3 {
+    display: none;
+    font: normal 20px Arial;
+}
+div#div4 {
+    display: none;
+    font: normal 20px Arial;
+}
+
 footer {
     font: normal 20px Arial;
     color: white;
