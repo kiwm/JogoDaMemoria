@@ -56,7 +56,7 @@ function finalizarJogo() {
         } else {
            tempF =  (-tempI) + 60 + tempF;
         }
-        pontuacao = parseInt(10000/ tentativas + tempF)
+        pontuacao = parseInt(10000/ (tentativas + (tempF * 5)))
         var div = document.querySelector('div#div3')
         div.innerText = `parabéns você conseguiu: ${pontuacao} pontos!!!`
         div.style.display = 'block'
