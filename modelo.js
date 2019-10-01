@@ -27,7 +27,6 @@ function shuffleArray(array) {
 function iniciarJogo() {
     var data = new Date()
     tempI = data.getMinutes()
-    alert(tempI)
     document.getElementById("div1").style.display = 'block';
     setTimeout(cobrir, 1000);
     function cobrir() {
